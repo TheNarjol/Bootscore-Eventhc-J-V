@@ -1,0 +1,203 @@
+.bg-cover-1, .bg-cover-2, .bg-cover-3 {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+}
+
+.bg-dark-50 {
+  background: linear-gradient(to bottom, #212529 50%, #00000000 50%), linear-gradient(to right, #212529 50%, #00000000 50%);
+}
+
+.logo-carousel {
+  overflow: inherit;
+  border-top: 1px solid #353535;
+  border-bottom: 1px solid #353535;
+}
+
+#background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.slick-slide img {
+  width: 50%;
+}
+
+.slick-track {
+  &::before {
+    display: table;
+    content: '';
+  }
+
+  &::after {
+    display: table;
+    content: '';
+    clear: both;
+  }
+
+  padding: 1rem 0;
+}
+
+.slick-loading .slick-track {
+  visibility: hidden;
+}
+
+.slick-slide {
+  &.slick-loading img {
+    display: none;
+  }
+
+  &.dragging img {
+    pointer-events: none;
+  }
+}
+
+.slick-loading .slick-slide {
+  visibility: hidden;
+}
+
+.img-dark {}
+
+.card-carta img {
+  min-height: 240px;
+  filter: brightness(0.5);
+}
+
+.card-event img {
+  object-fit: cover;
+  min-width: 300px;
+  width: 300px;
+  height: 280px;
+}
+
+.service-icon {
+  -webkit-filter: invert(100%);
+  filter: invert(100%);
+  width: 64px;
+  max-height: 64px;
+}
+
+/* Masonry Servics */
+
+.card-masonry {
+  display: block;
+  position: relative;
+  overflow: hidden;
+
+  .card-img {
+    object-fit: cover;
+    transform: scale(1);
+    transition: transform 150ms linear;
+  }
+
+  .card-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+
+    .card-title {
+      display: inline-block;
+      transform: translateY(10px);
+      opacity: 0;
+    }
+
+    .card-category {
+      transform: translateY(10px);
+      opacity: 0;
+    }
+  }
+
+  &:hover {
+    .card-img {
+      transform: scale(1.05);
+      transition: transform 150ms linear;
+    }
+
+    .card-overlay {
+      opacity: 1;
+      transition: opacity 150ms linear;
+
+      .card-title {
+        opacity: 1;
+        transform: translateY(0);
+        transition: transform 150ms linear 0.1s, opacity 150ms linear 0.1s;
+      }
+
+      .card-category {
+        opacity: 1;
+        transform: translateY(0);
+        transition: transform 150ms linear 0.2s, opacity 150ms linear 0.2s;
+      }
+    }
+  }
+}
+/* Estilos para los botones flotantes */
+.floating-buttons {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.floating-buttons a {
+  margin-bottom: 10px;
+}
+
+/* Estilos para el botón de WhatsApp */
+.whatsapp {
+  width: 60px;
+  height: 60px;
+  background-color: #25d366;
+  color: #FFF;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 30px;
+  z-index: 100;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.whatsapp-icon {
+  margin-top: 13px;
+}
+
+/* Estilos para el botón "Ir arriba" */
+.to-top {
+  background-color: #333;
+  color: #FFF;
+  border-radius: 50px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.to-top:hover {
+  background-color: #444;
+}
+
+/* Media query para pantallas pequeñas */
+@media (max-width: 768px) {
+  .floating-buttons {
+    bottom: 10px;
+    right: 10px;
+  }
+  .floating-buttons a {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+  .floating-buttons a.whatsapp {
+    margin-bottom: 20px; /* Agrega un margen adicional entre los botones */
+  }
+}

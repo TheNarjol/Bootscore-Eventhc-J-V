@@ -1,0 +1,88 @@
+/* ---- Animaciones ---- */
+
+/* Desvanecer */
+@keyframes anim-fade-in { from { opacity: 0; } to { opacity: 1 } }
+
+/* Hacia Arriba */
+@keyframes anim-up { 
+	from { opacity: 0; transform: translateY(100px); } 
+	to { opacity: 1; transform: translateY(0px); }  
+}		
+
+/* Hacia Abajo*/
+@keyframes anim-down { 
+	from { opacity: 0; transform: translateY(-100px); } 
+	to { opacity: 1; transform: translateY(0px); }  
+}		
+
+/* Hacia a la izquierda*/
+@keyframes anim-left { 
+	from { opacity: 0; transform: translateX(100px); } 
+	to { opacity: 1; transform: translateX(0px); }  
+}		
+
+/* Hacia a la Derecha*/
+@keyframes anim-right { 
+	from { opacity: 0; transform: translateX(-100px); } 
+	to { opacity: 1; transform: translateX(0px); }  
+}
+
+/* ---- Duracion de las animaciones ---- */
+.anim-up, .anim-down, .anim-left, .anim-right, .anim-fade-in {
+	/* la animacion dura 1 segundos */
+	animation-duration: 1s; 
+
+	/* esperamos 0,5 segundos antes de hacer la animacion */			
+	animation-delay: 0.5s; 
+
+	/* aplica estilos de la animacion antes y despues de reproducirla */
+	animation-fill-mode: both; 
+}
+
+/* ---- Inicializacion de las animaciones ---- */
+.anim-up { 
+	animation-name: anim-up; 
+}
+
+.anim-down { 
+	animation-name: anim-down; 
+}
+
+.anim-left { 
+	animation-name: anim-left; 
+}
+
+.anim-right { 
+	animation-name: anim-right; 
+}
+
+.anim-fade-in { 
+	animation-name: anim-fade-in; 
+}
+
+/* ----- Pausas de inicio de las animaciones con tiempos ----- */
+
+/* la animacion empieza en 2 seg. */		
+.anim-pause-2 { 
+	animation-delay: 2s; 
+}
+
+/* la animacion empieza en 3 seg. */
+.anim-pause-3 { 
+	animation-delay: 3s; 
+}
+
+/* la animacion empieza en 4 seg. */
+.anim-pause-4 { 
+	animation-delay: 4s; 
+}
+
+/* la animacion empieza en 5 seg. */
+.anim-pause-5 { 
+	animation-delay: 5s; 
+} 
+
+/* todas las animaciones pausadas */
+.paused * { 
+	animation-play-state: paused;
+}
